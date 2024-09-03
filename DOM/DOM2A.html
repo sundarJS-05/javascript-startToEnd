@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+
+        <title> DOM, JS & CHai</title>
+
+    </head>
+
+    <body style="background-color: #212121 ; color: aquamarine;">
+        
+        <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesday</div>
+        <div class="day">Thursday</div>
+        </div>
+
+
+    </body>
+
+    <script>
+        let parent = document.querySelector('.parent')
+        console.log('parent: ', parent)
+
+        // parent.children - returns HTML collection 
+        let childElemtsAll = parent.children
+        console.log(childElemtsAll)
+
+        // 1st child elemnt
+        console.log('1st child elentn: ', parent.children[0])
+        console.log('1st child elentn innerHTML is: ', parent.children[0].innerHTML)
+
+        for (let i = 0; i < childElemtsAll.length; i++) {
+            console.log('elemtn wise list:- ', childElemtsAll[i].innerHTML)
+            
+        }
+
+        console.log('last elem child', parent.lastElementChild )
+
+        let day1 = document.querySelector('.day')
+
+        console.log(day1.parentElement);
+        
+        console.log(day1.nextElementSibling);
+        
+
+   </script>
+
+
+
+
+</html>
