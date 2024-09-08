@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>DOM JS 02</title>
+
+    </head>
+
+    <body style="background-color: black; color: blue; ">
+
+        <div class="parent">
+
+            <div class="day"> Monday </div>
+            <div class="day"> Tuesday </div>
+            <div class="day"> Wednesday </div>
+            <div class="day"> Thursday </div>
+            
+
+        </div>
+
+      
+    </body>
+
+    <script>
+        const parent = document.querySelector('.parent')
+        console.log('parent:', parent);
+        
+
+        let child2 = parent.children
+        console.log('1st child\'s inner HTML', child2[0].innerHTML);
+
+        console.log('4 days of week are:');
+
+        for (let index = 0; index < child2.length; index++) {                        
+            console.log(child2[index].innerHTML);    
+            
+        }
+
+        console.log('--------');
+        
+        console.log(parent.firstElementChild);
+        console.log(parent.lastElementChild);
+
+        console.log('--------');
+
+        let day1 = document.querySelector('.day')
+        console.log(day1);
+        console.log('parent element of day1', day1.parentElement);
+        console.log('day1 sibling', day1.nextElementSibling)
+
+        console.log('no. of child nodes', parent.childNodes);
+        
+        
+
+    </script>
+
+</html>

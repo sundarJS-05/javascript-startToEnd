@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur DOM editing</title>
+</head>
+<body style="background-color: black; color: coral;">
+    <ul class="language">
+        <li> Adding new language</li>
+    </ul>
+    
+</body>
+
+
+<script>
+
+    // 1st methoid of adding new elmnt
+
+    function addLanguage(langName) {
+
+        const list = document.createElement('li')
+        list.innerHTML=`${langName}`
+
+        let parentUl = document.querySelector('.language')
+        parentUl.appendChild(list)
+
+
+    }
+
+    
+    addLanguage('Javascript')
+
+    // 1st methoid of adding new elmnt
+
+    function addFramework(fwrk){
+
+        const li02 = document.createElement('li')
+        const textNode = document.createTextNode(fwrk)
+        li02.appendChild(textNode)
+        const parentUl = document.querySelector('.language')
+        const finalElem = parentUl.appendChild(li02)
+        console.log(finalElem);
+        
+        
+    }
+    addFramework('ReactJS')
+
+    // editing adedded elemtns
+    let sel = document.querySelector('li:nth-child(2)')
+    let newLi = document.createElement('li')
+    let textNode = document.createTextNode('another framework')
+    newLi.appendChild(textNode)
+    console.log('newLi is',newLi)
+
+    // this replaces the 2nd child selcted in line 50 with 'newLi'
+    sel.replaceWith(newLi)
+
+
+
+    
+</script>
+
+
+</html>
