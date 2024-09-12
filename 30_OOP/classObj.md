@@ -37,3 +37,33 @@ let userObj = {
 console.log(userObj.getUserDetails() );
 
 console.log('this in global scope', this)
+
+
+
+// function userFn(username, loginCount, isLOggedIn){
+//     // left value is variable; so has this ;  right one is argument passed
+//     this.loginCount = loginCount
+
+//     return this
+// }
+
+// let guestUser = new userFn('jay', 12, true)
+
+// let guestUser2 = new userFn('yash', 15, true)
+
+// console.log(guestUser, '\n \n')
+
+// console.log(guestUser2);
+
+
+function square(x){
+    return x**2
+
+}
+
+// function behaving like object; 'power' attri. of 'sqaure' 
+square.power = 5
+
+console.log(square(17))
+
+console.log(square.power, '\n', square.prototype)

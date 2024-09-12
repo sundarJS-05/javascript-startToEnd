@@ -1,19 +1,31 @@
 
-
-function userFn(username, loginCount, isLOggedIn){
-    // left value is variable; so has this ;  right one is argument passed
-    this.loginCount = loginCount
-
-    return this
+function createUser(username,score){
+    this.username=username
+    this.score = score
 }
 
-let guestUser = new userFn('jay', 12, true)
+// definign a user/custom property 'scoremInus' for createUser obj
+createUser.prototype.scoreMinus = function(){
 
-let guestUser2 = new userFn('yash', 15, true)
+    // using "this" so that JS can identify & icnement score of whivchver user(1, 2 or other ) calss it
+    this.score--
+}
 
-console.log(guestUser, '\n \n')
+createUser.prototype.printScore = function(){
 
-console.log(guestUser2);
+  console.log(`score is ${this.score}`);
+  
+}
 
+
+let user1 = new createUser('user1', 34)
+
+let user2 = new createUser('user2', 56)
+
+user1.printScore()
+user2.printScore()
+
+user1.scoreMinus()
+user2.scoreMinus()
 
 
